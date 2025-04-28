@@ -1,0 +1,9 @@
+This project is licensed under the MIT license.
+
+
+  MIT License: LICENSE-MIT.txt or https://opensource.org/licenses/MIT
+
+
+This is equivalent to the following SPDX License Expression: MIT
+
+Copyright (c) 2025 Miles Georgi
