@@ -32,3 +32,23 @@ at https://github.com/foobara-demo/blog
 ## License
 
 This project is licensed under the MPL-2.0 license. Please see LICENSE.txt for more info.
+
+## Operations to implement
+
+StartNewArticle
+EditArticle
+PublishArticle
+PublishArticleChanges
+UnpublishArticle
+DeleteArticle
+
+FindArticle
+FindComment
+FindReply
+FindProfile
+EditProfile
+
+CommentOnArticle
+ReplyToComment
+EditComment
+EditReply
