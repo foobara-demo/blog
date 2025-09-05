@@ -4,7 +4,7 @@ module FoobaraDemo
       attributes do
         id :integer
         full_name :string, :required
-        bio :string, :allow_nil, "Bio in Markdown"
+        bio :string, default: "", description: "Bio in Markdown"
       end
 
       primary_key :id
