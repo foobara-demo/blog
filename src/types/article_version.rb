@@ -5,7 +5,6 @@ module FoobaraDemo
         id :integer
         title :string, default: ""
         body :string, default: "", description: "The body of the article in Markdown"
-        published_at :datetime, :allow_nil
         created_at :datetime, :required
         modified_at :datetime, :required
       end

@@ -35,14 +35,10 @@ This project is licensed under the MPL-2.0 license. Please see LICENSE.txt for m
 
 ## Operations to implement
 
-StartNewArticle
-EditArticle
-PublishArticle
 PublishArticleChanges
 UnpublishArticle
 DeleteArticle
 
-FindArticle
 FindComment
 FindReply
 FindProfile
