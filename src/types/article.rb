@@ -11,6 +11,7 @@ module FoobaraDemo
         current_draft ArticleVersion, :allow_nil
         past_published_versions [ArticleVersion], default: []
         published_at :datetime, :allow_nil
+        unpublished_at :datetime, :allow_nil
         originally_published_at :datetime, :allow_nil
         last_edited_at :datetime
       end

@@ -35,8 +35,6 @@ This project is licensed under the MPL-2.0 license. Please see LICENSE.txt for m
 
 ## Operations to implement
 
-PublishArticleChanges
-UnpublishArticle
 DeleteArticle
 
 FindComment
