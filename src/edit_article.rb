@@ -88,21 +88,6 @@ module FoobaraDemo
           )
         end
       end
-      # def create_new_published_version
-      #   article.last_edited_at = timestamp
-      #
-      #   article.past_published_versions = [
-      #     article.current_published_version,
-      #     *article.past_published_versions
-      #   ]
-      #
-      #   article.current_published_version = ArticleVersion.create(
-      #     title: new_title,
-      #     body: new_body,
-      #     created_at: timestamp,
-      #     modified_at: timestamp
-      #   )
-      # end
 
       def update_draft_version
         draft = article.current_draft

@@ -3,6 +3,7 @@ module FoobaraDemo
     class FindArticle < Foobara::Command
       inputs do
         article Article, :required
+        # Why do we do this here instead of in the command connector??
         aggregate :boolean, default: false
         load_paths :duck,
                    default: [],
@@ -12,6 +13,7 @@ module FoobaraDemo
       result Article
 
       def execute
+        # TODO: why would this be necessary??
         unless aggregate?
           load_current_versions
           load_associations
@@ -23,6 +25,8 @@ module FoobaraDemo
       def load_records
         if aggregate?
           Article.load_aggregate(article)
+        else
+          super
         end
       end
 
@@ -37,6 +41,7 @@ module FoobaraDemo
       end
 
       def load_associations
+        # TODO: we should be able to do this from the command connector (not yet implemented but we should)
         if load_paths && !load_paths.empty?
           Article.load(article, load_paths:)
         end
