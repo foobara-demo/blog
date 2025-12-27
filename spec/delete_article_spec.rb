@@ -12,7 +12,12 @@ RSpec.describe FoobaraDemo::Blog::DeleteArticle do
     FoobaraDemo::Blog::StartNewArticle.run!(author:)
   end
   let(:author) do
-    FoobaraDemo::Blog::CreateUser.run!(full_name: "Fumiko")
+    FoobaraDemo::Blog::Register.run!(
+      username: "fumiko",
+      email: "fumiko@example.com",
+      plaintext_password: "pass",
+      full_name: "Fumiko"
+    )
   end
 
   context "when published" do
@@ -22,7 +27,7 @@ RSpec.describe FoobaraDemo::Blog::DeleteArticle do
       FoobaraDemo::Blog::EditArticle.run!(article:, body: "new body", title: "new title")
     end
 
-    it "deletes the article and its versions", :focus do
+    it "deletes the article and its versions" do
       FoobaraDemo::Blog::Article.transaction do
         expect(FoobaraDemo::Blog::Article.count).to eq(1)
         expect(FoobaraDemo::Blog::ArticleVersion.count).to eq(2)

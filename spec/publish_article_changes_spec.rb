@@ -12,7 +12,12 @@ RSpec.describe FoobaraDemo::Blog::PublishArticleChanges do
     FoobaraDemo::Blog::StartNewArticle.run!(author:)
   end
   let(:author) do
-    FoobaraDemo::Blog::CreateUser.run!(full_name: "Fumiko")
+    FoobaraDemo::Blog::Register.run!(
+      username: "fumiko",
+      email: "fumiko@example.com",
+      plaintext_password: "pass",
+      full_name: "Fumiko"
+    )
   end
 
   context "when published" do
@@ -44,7 +49,7 @@ RSpec.describe FoobaraDemo::Blog::PublishArticleChanges do
           expect(updated_article.body).to eq("new body")
           expect(updated_article.title).to eq("new title")
 
-          updated_article = FoobaraDemo::Blog::FindArticle(article:, aggregate: true)
+          updated_article = FoobaraDemo::Blog::FindArticle.run!(article:, aggregate: true)
 
           expect(updated_article.past_published_versions.first.body).to eq("old body")
         end
@@ -56,7 +61,10 @@ RSpec.describe FoobaraDemo::Blog::PublishArticleChanges do
 
           expect(outcome).to be_success
 
-          updated_article = FoobaraDemo::Blog::FindArticle(article:, load_paths: [[:past_published_versions, :"#"]])
+          updated_article = FoobaraDemo::Blog::FindArticle.run!(
+            article:,
+            load_paths: [[:past_published_versions, :"#"]]
+          )
 
           expect(updated_article.past_published_versions.first.body).to eq("old body")
         end
