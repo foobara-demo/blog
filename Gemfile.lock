@@ -96,7 +96,7 @@ GEM
     foobara-resque-scheduler-connector-generator (0.0.2)
       foobara
       foobara-files-generator
-    foobara-rubocop-rules (1.0.10)
+    foobara-rubocop-rules (1.0.11)
       rubocop
       rubocop-rspec
     foobara-sh-cli-connector (1.1.3)

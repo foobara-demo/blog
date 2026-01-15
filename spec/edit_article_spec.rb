@@ -16,7 +16,7 @@ RSpec.describe FoobaraDemo::Blog::EditArticle do
     FoobaraDemo::Blog::StartNewArticle.run!(author:)
   end
   let(:author) do
-    FoobaraDemo::Blog::Register.run!(
+    FoobaraDemo::Blog::CreateUser.run!(
       blog_slug: "fumiko",
       full_name: "Fumiko"
     )

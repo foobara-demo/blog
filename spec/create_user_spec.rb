@@ -1,4 +1,4 @@
-RSpec.describe FoobaraDemo::Blog::Register do
+RSpec.describe FoobaraDemo::Blog::CreateUser do
   let(:command) { described_class.new(inputs) }
   let(:outcome) { command.run }
   let(:result) { outcome.result }

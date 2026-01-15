@@ -9,7 +9,7 @@ RSpec.describe FoobaraDemo::Blog::StartNewArticle do
     { author: }
   end
   let(:author) do
-    FoobaraDemo::Blog::Register.run!(blog_slug: "fumiko", full_name: "Fumiko")
+    FoobaraDemo::Blog::CreateUser.run!(blog_slug: "fumiko", full_name: "Fumiko")
   end
 
   it "is successful" do

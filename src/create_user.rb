@@ -1,6 +1,6 @@
 module FoobaraDemo
   module Blog
-    class Register < Foobara::Command
+    class CreateUser < Foobara::Command
       inputs do
         blog_slug :string, :required
         full_name :string, :required
