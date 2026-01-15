@@ -17,9 +17,7 @@ RSpec.describe FoobaraDemo::Blog::EditArticle do
   end
   let(:author) do
     FoobaraDemo::Blog::Register.run!(
-      username: "fumiko",
-      email: "fumiko@example.com",
-      plaintext_password: "pass",
+      blog_slug: "fumiko",
       full_name: "Fumiko"
     )
   end

@@ -12,12 +12,7 @@ RSpec.describe FoobaraDemo::Blog::UnpublishArticle do
     FoobaraDemo::Blog::StartNewArticle.run!(author:)
   end
   let(:author) do
-    FoobaraDemo::Blog::Register.run!(
-      username: "fumiko",
-      email: "fumiko@example.com",
-      plaintext_password: "pass",
-      full_name: "Fumiko"
-    )
+    FoobaraDemo::Blog::Register.run!(blog_slug: "fumiko", full_name: "Fumiko")
   end
   let(:body) { "some body" }
   let(:title) { "some title" }

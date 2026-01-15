@@ -12,12 +12,7 @@ RSpec.describe FoobaraDemo::Blog::PublishArticleChanges do
     FoobaraDemo::Blog::StartNewArticle.run!(author:)
   end
   let(:author) do
-    FoobaraDemo::Blog::Register.run!(
-      username: "fumiko",
-      email: "fumiko@example.com",
-      plaintext_password: "pass",
-      full_name: "Fumiko"
-    )
+    FoobaraDemo::Blog::Register.run!(blog_slug: "fumiko", full_name: "Fumiko")
   end
 
   context "when published" do
