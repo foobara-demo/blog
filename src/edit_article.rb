@@ -32,17 +32,8 @@ module FoobaraDemo
       end
 
       def determine_new_title_and_body
-        self.new_title = if title
-                           title.strip
-                         else
-                           article.title
-                         end
-
-        self.new_body = if body
-                          body.strip
-                        else
-                          article.body
-                        end
+        self.new_title = title ? title.strip : article.title
+        self.new_body = body ? body.strip : article.body
       end
 
       def validate
