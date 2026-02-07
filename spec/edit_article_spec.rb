@@ -13,7 +13,7 @@ RSpec.describe FoobaraDemo::Blog::EditArticle do
     }
   end
   let(:article) do
-    FoobaraDemo::Blog::StartNewArticle.run!(author:)
+    FoobaraDemo::Blog::StartNewArticle.run!(author:, title: "My first article!")
   end
   let(:author) do
     FoobaraDemo::Blog::CreateUser.run!(
@@ -52,7 +52,7 @@ RSpec.describe FoobaraDemo::Blog::EditArticle do
           expect(outcome).to be_success
         }.to change {
                FoobaraDemo::Blog::FindArticle.run!(article:).title
-             }.from("").to("new title")
+             }.from("My first article!").to("new title")
       end
     end
 

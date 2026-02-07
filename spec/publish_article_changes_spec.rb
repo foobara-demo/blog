@@ -9,11 +9,12 @@ RSpec.describe FoobaraDemo::Blog::PublishArticleChanges do
     { article: }
   end
   let(:article) do
-    FoobaraDemo::Blog::StartNewArticle.run!(author:)
+    FoobaraDemo::Blog::StartNewArticle.run!(author:, title:)
   end
   let(:author) do
     FoobaraDemo::Blog::CreateUser.run!(blog_slug: "fumiko", full_name: "Fumiko")
   end
+  let(:title) { "My First Post" }
 
   context "when published" do
     before do

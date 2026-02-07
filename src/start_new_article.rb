@@ -3,6 +3,7 @@ module FoobaraDemo
     class StartNewArticle < Foobara::Command
       inputs do
         author User, :required
+        title :string, :required
       end
 
       result Article
@@ -22,7 +23,7 @@ module FoobaraDemo
       end
 
       def create_draft_version
-        self.draft_version = ArticleVersion.create(created_at: timestamp, modified_at: timestamp)
+        self.draft_version = ArticleVersion.create(created_at: timestamp, modified_at: timestamp, title:)
       end
 
       def create_article

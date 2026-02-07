@@ -6,11 +6,12 @@ RSpec.describe FoobaraDemo::Blog::StartNewArticle do
   let(:errors_hash) { outcome.errors_hash }
 
   let(:inputs) do
-    { author: }
+    { author:, title: }
   end
   let(:author) do
     FoobaraDemo::Blog::CreateUser.run!(blog_slug: "fumiko", full_name: "Fumiko")
   end
+  let(:title) { "My first article!" }
 
   it "is successful" do
     expect(outcome).to be_success

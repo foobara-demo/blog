@@ -9,7 +9,7 @@ RSpec.describe FoobaraDemo::Blog::FindArticle do
     { article: article.id }
   end
   let(:article) do
-    FoobaraDemo::Blog::StartNewArticle.run!(author:)
+    FoobaraDemo::Blog::StartNewArticle.run!(author:, title: "My first article!")
   end
   let(:author) do
     FoobaraDemo::Blog::CreateUser.run!(blog_slug: "fumiko", full_name: "Fumiko")
