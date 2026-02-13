@@ -4,7 +4,7 @@ module FoobaraDemo
       inputs do
         article Article, :required
         title :string, :allow_nil
-        body :string, :allow_nil, description: "The new body of the article in Markdown"
+        body :string, :allow_nil, "The new body of the article in Markdown"
       end
 
       result Article

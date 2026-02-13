@@ -27,7 +27,7 @@ RSpec.describe FoobaraDemo::Blog::PublishArticleChanges do
         it "edits the article's draft" do
           FoobaraDemo::Blog::EditArticle.run!(article:, body: "new body", title: "new title")
 
-          updated_article = FoobaraDemo::Blog::FindArticle.run!(article:)
+          updated_article = FoobaraDemo::Blog::FindArticle.run!(article:, aggregate: true)
 
           expect(updated_article.body).to eq("old body")
           expect(updated_article.title).to eq("old title")

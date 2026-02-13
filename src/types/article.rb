@@ -7,6 +7,8 @@ module FoobaraDemo
         id :integer
         author User, :required
         is_published :boolean, default: false
+        current_version ArticleVersion, :required,
+                        "If published, will be the published version. Otherwise, the latest draft."
         current_published_version ArticleVersion, :allow_nil
         current_draft ArticleVersion, :allow_nil
         past_published_versions [ArticleVersion], default: []
@@ -18,21 +20,8 @@ module FoobaraDemo
 
       primary_key :id
 
-      def body
-        if published?
-          current_published_version
-        else
-          current_draft
-        end.body
-      end
-
-      def title
-        if published?
-          current_published_version
-        else
-          current_draft
-        end.title
-      end
+      delegate_attribute :title, :current_version
+      delegate_attribute :body, :current_version
 
       def published?
         is_published

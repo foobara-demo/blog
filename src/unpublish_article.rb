@@ -36,6 +36,7 @@ module FoobaraDemo
           body: current_version.body,
           title: current_version.title
         )
+        article.current_version = article.current_draft
 
         article.past_published_versions = [
           article.current_published_version,

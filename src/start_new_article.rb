@@ -30,7 +30,8 @@ module FoobaraDemo
         self.article = Article.create(
           author:,
           last_edited_at: timestamp,
-          current_draft: draft_version
+          current_draft: draft_version,
+          current_version: draft_version
         )
       end
     end

@@ -28,7 +28,7 @@ module FoobaraDemo
       end
 
       def set_published_version
-        article.current_published_version = article.current_draft
+        article.current_version = article.current_published_version = article.current_draft
         article.current_draft = nil
       end
 

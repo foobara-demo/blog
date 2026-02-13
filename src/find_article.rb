@@ -35,7 +35,11 @@ module FoobaraDemo
       end
 
       def load_current_versions
-        [article.current_published_version, article.current_draft].compact.each do |version|
+        [
+          article.current_published_version,
+          article.current_draft,
+          article.current_version
+        ].compact.each do |version|
           ArticleVersion.load(version)
         end
       end
