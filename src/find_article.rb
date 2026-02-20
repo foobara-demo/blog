@@ -1,6 +1,6 @@
 module FoobaraDemo
   module Blog
-    class FindArticle < Foobara::Command
+    class FindArticle < Foobara::Query
       inputs do
         article Article, :required
         # Why do we do this here instead of in the command connector??

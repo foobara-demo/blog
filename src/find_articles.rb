@@ -1,6 +1,6 @@
 module FoobaraDemo
   module Blog
-    class FindArticles < Foobara::Command
+    class FindArticles < Foobara::Query
       inputs do
         author User, :required
       end

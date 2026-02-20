@@ -2,7 +2,7 @@ require_relative "find_articles"
 
 module FoobaraDemo
   module Blog
-    class FindArticleSummaries < Foobara::Command
+    class FindArticleSummaries < Foobara::Query
       inputs do
         author User, :required
       end
